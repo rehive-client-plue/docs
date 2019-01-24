@@ -1,0 +1,21 @@
+baseURL: "https://example.org/"
+languageCode: "en-us"
+title: "Documentation"
+theme: "hexon-hugo-theme"
+
+params:
+  logoUrl: http://plue.io
+  logoImage: /images/logo.png
+  heroImage: /images/hero.png
+  favicon: /images/favicon.png
+
+  primaryColor: "#002d6d"
+  secondaryColor: "#ff2852"
+
+  extraNavItems:
+    - title: Log in
+      url: https://wallet.plue.io
+
+  extraFooterItems:
+    - title: Log in
+      url: https://wallet.plue.io

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+<title>Errors | Documentation</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.edad3ac86ccae1a30e5f2a7e8e6a58b0a5ce7f524429b4338442e0efe17ea9c9.css" integrity="sha256-7a06yGzK4aMOXyp&#43;jmpYsKXOf1JEKbQzhELg7&#43;F&#43;qck=">
+
+<link rel="icon" type="/images/favicon.png" href="/images/favicon.png">
+
+	</head>
+	<body>
+		<header>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				
+				<li class="navbar-item">
+					
+						<a href="http://plue.io" class="navbar-logo-link">
+							<img src="/images/logo.png">
+						</a>
+					
+				</li>
+				<li class="navbar-item">
+					<a href="/" class="navbar-link ">Docs</a>
+				</li>
+				
+					<li class="navbar-item">
+						<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+					</li>
+				
+	
+				
+					<li class="navbar-item navbar-right-item">
+						<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+					</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-navbar">
+		<div class="burger-container" onclick="openNav()">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	</div>
+	<div id="sidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<a href="/" class="navbar-link ">Docs</a>
+		
+			<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+		
+
+		
+			<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+		
+	  </div>
+	  <script>
+			function openNav() {
+				document.getElementById("sidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("sidenav").style.width = "0";
+			}
+	  </script>
+</header>
+
+		<div class="container">
+			<div class="row">
+				<aside class="navaside two columns">
+	<ul>
+		
+		
+			<li>
+				<span><strong>Get started</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/get-started/introduction/" class="">Introduction</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/quick-guide/" class="">Quick guide</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/checkout-flow/" class="">Checkout flow</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Core resources</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/core-resources/users/" class="">Users</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/accounts/" class="">Accounts</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/transactions/" class="">Transactions</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Usage</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/usage/authorization/" class="">Authorization</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/errors/" class="active">Errors</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/pagination/" class="">Pagination</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/filters/" class="">Filters</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/idempotency/" class="">Idempotency</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/events/" class="">Events</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				<li>
+					<span><strong>References</strong></span>
+					<ul>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-javascript" target="_blank">Javascript SDK</a>
+							</li>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-python" target="_blank">Python SDK</a>
+							</li>
+						
+					</ul>
+				</li>
+			
+		
+	</ul>
+</aside>
+
+				<main class="ten columns">
+					<div class="content">
+						
+	<h1>Errors</h1>
+
+	<article>
+	    <p>When an error occurs in the platform it returns a HTTP response containing two things:</p>
+
+<ol>
+<li>body (formatted in JSON) containing a <code>message</code> and <code>status</code></li>
+<li>and HTTP response code</li>
+</ol>
+
+<p>The JSON error response always includes a <code>message</code> string. If an error occurred as a result of a specific attribute or
+key the error details will be outputted in the <code>data</code> object.</p>
+
+<p>Errors will be formatted in one of two ways. A minimal error message:</p>
+
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Error message.&quot;
+}
+</code></pre>
+
+<p>or a descriptive error message including an additional <code>data</code> object with details:</p>
+
+<pre><code class="language-json"> {
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;First error message, Second error message&quot;,
+    &quot;data&quot;: {
+        &quot;field_name1&quot;: [
+            &quot;First error message.&quot;
+        ],
+        &quot;field_name2&quot;: [
+            &quot;Second error message.&quot;
+        ]
+    }
+}
+</code></pre>
+
+	</article>
+
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+	<div class="container">
+		<div class="row links">
+			<a href="/">Docs</a>
+			
+			
+				<a href="/checkout/get-started/introduction">Merchant checkout</a>
+			
+			
+				<a href="https://wallet.plue.io">Log in</a>
+			
+		</div>
+	</div>
+</footer>
+	</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+<title>Filters | Documentation</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.edad3ac86ccae1a30e5f2a7e8e6a58b0a5ce7f524429b4338442e0efe17ea9c9.css" integrity="sha256-7a06yGzK4aMOXyp&#43;jmpYsKXOf1JEKbQzhELg7&#43;F&#43;qck=">
+
+<link rel="icon" type="/images/favicon.png" href="/images/favicon.png">
+
+	</head>
+	<body>
+		<header>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				
+				<li class="navbar-item">
+					
+						<a href="http://plue.io" class="navbar-logo-link">
+							<img src="/images/logo.png">
+						</a>
+					
+				</li>
+				<li class="navbar-item">
+					<a href="/" class="navbar-link ">Docs</a>
+				</li>
+				
+					<li class="navbar-item">
+						<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+					</li>
+				
+	
+				
+					<li class="navbar-item navbar-right-item">
+						<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+					</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-navbar">
+		<div class="burger-container" onclick="openNav()">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	</div>
+	<div id="sidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<a href="/" class="navbar-link ">Docs</a>
+		
+			<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+		
+
+		
+			<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+		
+	  </div>
+	  <script>
+			function openNav() {
+				document.getElementById("sidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("sidenav").style.width = "0";
+			}
+	  </script>
+</header>
+
+		<div class="container">
+			<div class="row">
+				<aside class="navaside two columns">
+	<ul>
+		
+		
+			<li>
+				<span><strong>Get started</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/get-started/introduction/" class="">Introduction</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/quick-guide/" class="">Quick guide</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/checkout-flow/" class="">Checkout flow</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Core resources</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/core-resources/users/" class="">Users</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/accounts/" class="">Accounts</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/transactions/" class="">Transactions</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Usage</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/usage/authorization/" class="">Authorization</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/errors/" class="">Errors</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/pagination/" class="">Pagination</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/filters/" class="active">Filters</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/idempotency/" class="">Idempotency</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/events/" class="">Events</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				<li>
+					<span><strong>References</strong></span>
+					<ul>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-javascript" target="_blank">Javascript SDK</a>
+							</li>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-python" target="_blank">Python SDK</a>
+							</li>
+						
+					</ul>
+				</li>
+			
+		
+	</ul>
+</aside>
+
+				<main class="ten columns">
+					<div class="content">
+						
+	<h1>Filters</h1>
+
+	<article>
+	    
+
+<p>The API provides a way to filter and/or sort on listing pages. All filtering and sorting is done via query parameters in the GET request.</p>
+
+<p>To filter by a field, include it in the URL as a standard query parameter with a <code>?</code> delimiting the URL and the start of the query parameters and a <code>&amp;</code> between each filtered field. This can be seen below:</p>
+
+<pre><code class="language-shell">curl https://api.rehive.com/3/admin/transactions/?status=complete&amp;tx_type=debit&amp;orderby=created
+  -X GET
+  -H &quot;Authorization: Token {token}&quot;
+  -H &quot;Content-Type: application/json&quot;
+</code></pre>
+
+<p>To sort results, an endpoint will often also include an optional <code>orderby</code> query parameter.</p>
+
+<h3 id="complex-filter-fields">Complex Filter Fields</h3>
+
+<p>There are several filter field types in the API that offer more complex interactions:</p>
+
+<h4 id="date-fields">Date Fields</h4>
+
+<p>Date fields can be further narrowed down by filtering on ranges using the greater
+than (<code>__gt</code>) and less than (<code>__lt</code>) suffixes (eg. <code>created__gt</code>).</p>
+
+<h4 id="metadata-fields">Metadata Fields</h4>
+
+<p>Custom metadata fields can be filtered on their first level children by adding the child attribute as a suffix (<code>__child_attribute</code>). So if metadata contains a JSON object with an attribute <code>name</code> it can
+be filtered using <code>?metadata__name=joshua</code>.</p>
+
+	</article>
+
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+	<div class="container">
+		<div class="row links">
+			<a href="/">Docs</a>
+			
+			
+				<a href="/checkout/get-started/introduction">Merchant checkout</a>
+			
+			
+				<a href="https://wallet.plue.io">Log in</a>
+			
+		</div>
+	</div>
+</footer>
+	</body>
+</html>

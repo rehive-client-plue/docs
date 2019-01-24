@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+<title>Transactions | Documentation</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.edad3ac86ccae1a30e5f2a7e8e6a58b0a5ce7f524429b4338442e0efe17ea9c9.css" integrity="sha256-7a06yGzK4aMOXyp&#43;jmpYsKXOf1JEKbQzhELg7&#43;F&#43;qck=">
+
+<link rel="icon" type="/images/favicon.png" href="/images/favicon.png">
+
+	</head>
+	<body>
+		<header>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				
+				<li class="navbar-item">
+					
+						<a href="http://plue.io" class="navbar-logo-link">
+							<img src="/images/logo.png">
+						</a>
+					
+				</li>
+				<li class="navbar-item">
+					<a href="/" class="navbar-link ">Docs</a>
+				</li>
+				
+					<li class="navbar-item">
+						<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+					</li>
+				
+	
+				
+					<li class="navbar-item navbar-right-item">
+						<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+					</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-navbar">
+		<div class="burger-container" onclick="openNav()">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	</div>
+	<div id="sidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<a href="/" class="navbar-link ">Docs</a>
+		
+			<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+		
+
+		
+			<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+		
+	  </div>
+	  <script>
+			function openNav() {
+				document.getElementById("sidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("sidenav").style.width = "0";
+			}
+	  </script>
+</header>
+
+		<div class="container">
+			<div class="row">
+				<aside class="navaside two columns">
+	<ul>
+		
+		
+			<li>
+				<span><strong>Get started</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/get-started/introduction/" class="">Introduction</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/quick-guide/" class="">Quick guide</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/checkout-flow/" class="">Checkout flow</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Core resources</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/core-resources/users/" class="">Users</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/accounts/" class="">Accounts</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/transactions/" class="active">Transactions</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Usage</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/usage/authorization/" class="">Authorization</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/errors/" class="">Errors</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/pagination/" class="">Pagination</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/filters/" class="">Filters</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/idempotency/" class="">Idempotency</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/events/" class="">Events</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				<li>
+					<span><strong>References</strong></span>
+					<ul>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-javascript" target="_blank">Javascript SDK</a>
+							</li>
+						
+							<li>
+								<a href="https://github.com/rehive/rehive-python" target="_blank">Python SDK</a>
+							</li>
+						
+					</ul>
+				</li>
+			
+		
+	</ul>
+</aside>
+
+				<main class="ten columns">
+					<div class="content">
+						
+	<h1>Transactions</h1>
+
+	<article>
+	    
+
+<p>Transactions are a way to manage value on and between accounts in the Plue wallet. Every transaction can be either a <code>debit</code> or a <code>credit</code>. In simple terms <code>debit</code> reduces an account&rsquo;s balance and a <code>credit</code> increases an account&rsquo;s balance. A transfer can be thought of as a 2-step transaction where one user is debited and another is credited the required amount. This structure allows for easy verification of balances and can be used to back track to a specific point in time to discover what the balance was.</p>
+
+<p>Every transaction has a status that can be used to gauge the state of the transaction. The statuses are:</p>
+
+<table>
+<thead>
+<tr>
+<th>status</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Initiating</td>
+<td>processing the transaction insert</td>
+</tr>
+
+<tr>
+<td>Pending</td>
+<td>the transaction has passed all validation</td>
+</tr>
+
+<tr>
+<td>Complete</td>
+<td>the transaction has been applied to the account currency&rsquo;s balance.</td>
+</tr>
+
+<tr>
+<td>Failed</td>
+<td>the transaction and the balance have been reverted</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="object">Object</h3>
+
+<p>Transactions are essentially logs of actions on an account balance. With this in mind, transactions contain information that can be used to identify who made the transaction, what the transaction was made on, and how the transaction impacted the account.</p>
+
+<p>A full transaction object looks like:</p>
+
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;tx_type&quot;: &quot;credit&quot;,
+        &quot;subtype&quot;: null,
+        &quot;note&quot;: &quot;&quot;,
+        &quot;metadata&quot;: {},
+        &quot;status&quot;: &quot;Pending&quot;,
+        &quot;reference&quot;: null,
+        &quot;amount&quot;: 500,
+        &quot;fee&quot;: 0,
+        &quot;total_amount&quot;: 500,
+        &quot;balance&quot;: 0,
+        &quot;account&quot;: &quot;0000000000&quot;,
+        &quot;label&quot;: &quot;Credit&quot;,
+        &quot;company&quot;: &quot;rehive&quot;,
+        &quot;currency&quot;: {
+            &quot;description&quot;: &quot;Rand&quot;,
+            &quot;code&quot;: &quot;ZAR&quot;,
+            &quot;symbol&quot;: &quot;R&quot;,
+            &quot;unit&quot;: &quot;rand&quot;,
+            &quot;divisibility&quot;: 2
+        },
+        &quot;source_transaction&quot;: null,
+        &quot;destination_transaction&quot;: null,
+        &quot;messages&quot;: [],
+        &quot;fees&quot;: [],
+        &quot;created&quot;: 1476691969394,
+        &quot;updated&quot;: 1496135465287
+    }
+}
+</code></pre>
+
+<p>A debit transaction will look much the same as the above, except the <code>amount</code> will be a negative value and the <code>tx_type</code> will be <code>Debit</code>.</p>
+
+<p>On the other hand a transfer will have some additional information in the <code>source_transaction</code> or <code>destination_transaction</code> attributes. As stated previously, transfers are simply debits/credits themselves. So, if a transfer is made between two accounts 2 transactions will be created:</p>
+
+<ol>
+<li>A debit transaction reducing the balance of the sender. In addition the <code>destination_transaction</code> attribute will be populated with a pointer to the receiver transaction.</li>
+<li>A credit transaction increasing the balance of the receiver. In addition the <code>source_transaction</code> attribute will be populated with a pointer to the sender transaction.</li>
+</ol>
+
+<h3 id="endpoints">Endpoints</h3>
+
+<table>
+<thead>
+<tr>
+<th>section</th>
+<th>type</th>
+<th>URL</th>
+<th>methods</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>user</td>
+<td>multiple</td>
+<td><code>https://api.rehive.com/3/transactions/</code></td>
+<td><code>GET</code>, <code>POST</code></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>single</td>
+<td><code>https://api.rehive.com/3/transactions/&lt;id&gt;/</code></td>
+<td><code>GET</code></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>single</td>
+<td><code>https://api.rehive.com/3/transactions/transfer/</code></td>
+<td><code>POST</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="usage">Usage</h3>
+
+<p>Usage remains the same for all endpoints in Rehive. Simply invoke one of the allowed HTTP methods with the correct <code>Content-Type</code> and a <code>Authorization</code> header.</p>
+
+	</article>
+
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+	<div class="container">
+		<div class="row links">
+			<a href="/">Docs</a>
+			
+			
+				<a href="/checkout/get-started/introduction">Merchant checkout</a>
+			
+			
+				<a href="https://wallet.plue.io">Log in</a>
+			
+		</div>
+	</div>
+</footer>
+	</body>
+</html>
