@@ -98,8 +98,27 @@
 							<a href="/checkout/get-started/quick-guide/" class="active">Quick guide</a>
 						</li>
 					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Integration guide</strong></span>
+				<ul>
+					
 						<li>
-							<a href="/checkout/get-started/checkout-flow/" class="">Checkout flow</a>
+							<a href="/checkout/integration-guide/overview/" class="">Overview</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/authentication/" class="">1. Authentication</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/balance/" class="">2. Balance check</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/payment/" class="">3. Payment</a>
 						</li>
 					
 				</ul>
@@ -212,7 +231,7 @@
 
 <p>Once you have your own user you can replace the placeholder data in the example JSON object and then fire off the above request. If successful, you should get a response like this:</p>
 
-<pre><code>{
+<pre><code class="language-json">{
     &quot;status&quot;: &quot;success&quot;
     &quot;data&quot;: {
         &quot;token&quot;: &quot;{token}&quot;,
@@ -277,7 +296,7 @@
 
 <p>If you used the <code>token</code> you previously retrieved you should get a successful response containing a list of user accounts:</p>
 
-<pre><code>[
+<pre><code class="language-json">[
     {
         &quot;name&quot;: &quot;default&quot;,
         &quot;reference&quot;: &quot;0000000000&quot;,

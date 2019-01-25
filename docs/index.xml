@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation</title>
-    <link>https://example.org/</link>
+    <link>https://plue.io/</link>
     <description>Recent content on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 17 Sep 2018 15:21:22 +0200</lastBuildDate>
     
-	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://plue.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Authorization</title>
-      <link>https://example.org/checkout/usage/authorization/</link>
+      <link>https://plue.io/checkout/usage/authorization/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/authorization/</guid>
+      <guid>https://plue.io/checkout/usage/authorization/</guid>
       <description>The API uses a token-based HTTP Authentication scheme.
 Once a user has logged in and received a token, each subsequent request should include the token in the HTTP Authorization header. Tokens expire 10 hours after creation. Once a token has expired, login is required in order to re-authenticate.
 Authorization Header When making requests, the API key should be included as a token in the Authorization header:
@@ -25,10 +25,10 @@ Authorization: Token {token}  You must replace {token} with your API token.</des
     
     <item>
       <title>Introduction</title>
-      <link>https://example.org/checkout/get-started/introduction/</link>
+      <link>https://plue.io/checkout/get-started/introduction/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/get-started/introduction/</guid>
+      <guid>https://plue.io/checkout/get-started/introduction/</guid>
       <description>The Merchant API allows you to integrate the Plue wallet into your existing checkout flow.
 The API The API is organized around RESTful principles. There are 2 primary sections to the merchant API:
 Auth The auth section of the platform provides endpoints for handling authentication and other authorization related functions that are common to all users within the platform.
@@ -36,21 +36,41 @@ Authentication endpoints do not require any specific permissions nor are they li
     </item>
     
     <item>
-      <title>Users</title>
-      <link>https://example.org/checkout/core-resources/users/</link>
+      <title>Overview</title>
+      <link>https://plue.io/checkout/integration-guide/overview/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/core-resources/users/</guid>
+      <guid>https://plue.io/checkout/integration-guide/overview/</guid>
+      <description>Accepting payments with Plue Checkout is a three step process, with client side and server side actions.
+From your website running in the customer’s browser, Plue securely collects your customer’s authentication details and returns an authentication token. This, along with any other form data, is then submitted by the browser to the Plue server. Your application can pull the customer’s account balance and let the customer choose a Plue account to make a payment.</description>
+    </item>
+    
+    <item>
+      <title>Users</title>
+      <link>https://plue.io/checkout/core-resources/users/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://plue.io/checkout/core-resources/users/</guid>
       <description>Object This object is returned together with the authentication token when the user logs in. The full user object looks like this:
 { &amp;quot;id&amp;quot;: &amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;, &amp;quot;first_name&amp;quot;: &amp;quot;Joe&amp;quot;, &amp;quot;last_name&amp;quot;: &amp;quot;Soap&amp;quot;, &amp;quot;email&amp;quot;: &amp;quot;joe@rehive.com&amp;quot;, &amp;quot;username&amp;quot;: null, &amp;quot;id_number&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;birth_date&amp;quot;: &amp;quot;2000-01-01&amp;quot;, &amp;quot;profile&amp;quot;: null, &amp;quot;currency&amp;quot;: { &amp;quot;description&amp;quot;: &amp;quot;Rand&amp;quot;, &amp;quot;code&amp;quot;: &amp;quot;ZAR&amp;quot;, &amp;quot;symbol&amp;quot;: &amp;quot;R&amp;quot;, &amp;quot;unit&amp;quot;: &amp;quot;rand&amp;quot;, &amp;quot;divisibility&amp;quot;: 2 }, &amp;quot;company&amp;quot;: &amp;quot;rehive&amp;quot;, &amp;quot;language&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;nationality&amp;quot;: &amp;quot;ZA&amp;quot;, &amp;quot;metadata&amp;quot;: null, &amp;quot;mobile&amp;quot;: &amp;quot;+27840000000&amp;quot;, &amp;quot;timezone&amp;quot;: &amp;quot;Asia/Dhaka&amp;quot;, &amp;quot;verified&amp;quot;: true, &amp;quot;verification&amp;quot;: { &amp;quot;email&amp;quot;: true, &amp;quot;mobile&amp;quot;: true }, &amp;quot;kyc&amp;quot;: { &amp;quot;updated&amp;quot;: 1509539801040, &amp;quot;status&amp;quot;: &amp;quot;pending&amp;quot; }, &amp;quot;status&amp;quot;: &amp;quot;pending&amp;quot;, &amp;quot;groups&amp;quot;: [], &amp;quot;permissions&amp;quot;: [], &amp;quot;created&amp;quot;: 1464912953000, &amp;quot;updated&amp;quot;: 1464912953000, &amp;quot;settings&amp;quot;: { &amp;quot;allow_transactions&amp;quot;: true, &amp;quot;allow_debit_transactions&amp;quot;: true, &amp;quot;allow_credit_transactions&amp;quot;: true }, &amp;quot;last_login&amp;quot;: null, &amp;quot;archived&amp;quot;: false }  Endpoints    section type URL methods     auth single https://api.</description>
     </item>
     
     <item>
-      <title>Accounts</title>
-      <link>https://example.org/checkout/core-resources/accounts/</link>
+      <title>1. Authentication</title>
+      <link>https://plue.io/checkout/integration-guide/authentication/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/core-resources/accounts/</guid>
+      <guid>https://plue.io/checkout/integration-guide/authentication/</guid>
+      <description>The customer arrives on your web page in the browser and selects the Pay with Plue checkout option. The customer is prompted to authenticate their Plue account by providing their email and password.
+Endpoints    URL methods     https://api.rehive.com/3/auth/login/ POST    Javascript example code: rehive.auth.login({ user: &amp;quot;joe@rehive.com&amp;quot;, company: &amp;quot;plue&amp;quot;, password: &amp;quot;joe1234&amp;quot; }).then(function(user){ ... },function(err){ ... })  Note: the company field should be hardcoded to the value &#34;</description>
+    </item>
+    
+    <item>
+      <title>Accounts</title>
+      <link>https://plue.io/checkout/core-resources/accounts/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://plue.io/checkout/core-resources/accounts/</guid>
       <description>Object This object can be used to check the currency balances for a user before approving a transaction.
 The full account object with a single currency looks like:
 { &amp;quot;name&amp;quot;: &amp;quot;default&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;Default&amp;quot;, &amp;quot;reference&amp;quot;: &amp;quot;0000000000&amp;quot;, &amp;quot;primary&amp;quot;: true, &amp;quot;user&amp;quot;: { &amp;quot;id&amp;quot;: &amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;, &amp;quot;username&amp;quot;: null, &amp;quot;email&amp;quot;: &amp;quot;joe@rehive.com&amp;quot;, &amp;quot;mobile&amp;quot;: &amp;quot;+27840000000&amp;quot;, &amp;quot;first_name&amp;quot;: &amp;quot;Joe&amp;quot;, &amp;quot;last_name&amp;quot;: &amp;quot;Soap&amp;quot;, &amp;quot;profile&amp;quot;: null }, &amp;quot;currencies&amp;quot;: [ { &amp;quot;balance&amp;quot;: 0, &amp;quot;available_balance&amp;quot;: 0, &amp;quot;currency&amp;quot;: { &amp;quot;code&amp;quot;: &amp;quot;USD&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;United States dollar&amp;quot;, &amp;quot;symbol&amp;quot;: &amp;quot;$&amp;quot;, &amp;quot;unit&amp;quot;: &amp;quot;dollar&amp;quot;, &amp;quot;divisibility&amp;quot;: 2 }, &amp;quot;limits&amp;quot;: [], &amp;quot;fees&amp;quot;: [], &amp;quot;active&amp;quot;: true, &amp;quot;settings&amp;quot;: { &amp;quot;allow_transactions&amp;quot;: true, &amp;quot;allow_debit_transactions&amp;quot;: true, &amp;quot;allow_credit_transactions&amp;quot;: true }, &amp;quot;archived&amp;quot;: false, &amp;quot;created&amp;quot;: 1538573021547, &amp;quot;updated&amp;quot;: 1538573021547 } ], &amp;quot;archived&amp;quot;: false, &amp;quot;created&amp;quot;: 1538573021502, &amp;quot;updated&amp;quot;: 1538573021502 }  Endpoints To view an account or its currencies you can use the following endpoints.</description>
@@ -58,10 +78,10 @@ The full account object with a single currency looks like:
     
     <item>
       <title>Errors</title>
-      <link>https://example.org/checkout/usage/errors/</link>
+      <link>https://plue.io/checkout/usage/errors/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/errors/</guid>
+      <guid>https://plue.io/checkout/usage/errors/</guid>
       <description>When an error occurs in the platform it returns a HTTP response containing two things:
  body (formatted in JSON) containing a message and status and HTTP response code  The JSON error response always includes a message string. If an error occurred as a result of a specific attribute or key the error details will be outputted in the data object.
 Errors will be formatted in one of two ways.</description>
@@ -69,48 +89,58 @@ Errors will be formatted in one of two ways.</description>
     
     <item>
       <title>Quick guide</title>
-      <link>https://example.org/checkout/get-started/quick-guide/</link>
+      <link>https://plue.io/checkout/get-started/quick-guide/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/get-started/quick-guide/</guid>
+      <guid>https://plue.io/checkout/get-started/quick-guide/</guid>
       <description>To get started with the API you have a couple options:
  You can choose to use one of the Rehive supported SDKs or Integrate the API manually in your choice of language.  To use one of the SDKs check for you language in the &amp;ldquo;references list&amp;rdquo; in the sidebar. If you instead want to use a language that does not have a Rehive supported SDK, a custom implementation should be trivial as the platform uses standard HTTP which is widely supported.</description>
     </item>
     
     <item>
-      <title>Checkout flow</title>
-      <link>https://example.org/checkout/get-started/checkout-flow/</link>
+      <title>2. Balance check</title>
+      <link>https://plue.io/checkout/integration-guide/balance/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/get-started/checkout-flow/</guid>
-      <description>TODO</description>
+      <guid>https://plue.io/checkout/integration-guide/balance/</guid>
+      <description>The customer&amp;rsquo;s account balance is pulled. You can decide if you want to allow the customer to change their preferred account or currency to make a payment. The customer can see their available balance for the selected accounts as well as the currency conversion rate that matches the currency specified in the order. The customer can change the amount they would need to pay in the currency specified in the order and validate the underlying currency amount that will be charged to their account.</description>
     </item>
     
     <item>
       <title>Pagination</title>
-      <link>https://example.org/checkout/usage/pagination/</link>
+      <link>https://plue.io/checkout/usage/pagination/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/pagination/</guid>
+      <guid>https://plue.io/checkout/usage/pagination/</guid>
       <description>On listing pages, the API provides a way to paginate results. The default pagination method offered by the API is offset pagination, which allows navigation to an arbitrary point in a list of results as well as via next and prevattributes. The JSON format returned on paginated listing pages looks like this:
 { &amp;quot;status&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;data&amp;quot;: { &amp;quot;count&amp;quot;: 1, &amp;quot;next&amp;quot;: null, &amp;quot;previous&amp;quot;: null, &amp;quot;results&amp;quot;: [] } }  The default page size is 15 but can be changed by adding a page_size query parameter to the request URL.</description>
     </item>
     
     <item>
       <title>Transactions</title>
-      <link>https://example.org/checkout/core-resources/transactions/</link>
+      <link>https://plue.io/checkout/core-resources/transactions/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/core-resources/transactions/</guid>
+      <guid>https://plue.io/checkout/core-resources/transactions/</guid>
       <description>Transactions are a way to manage value on and between accounts in the Plue wallet. Every transaction can be either a debit or a credit. In simple terms debit reduces an account&amp;rsquo;s balance and a credit increases an account&amp;rsquo;s balance. A transfer can be thought of as a 2-step transaction where one user is debited and another is credited the required amount. This structure allows for easy verification of balances and can be used to back track to a specific point in time to discover what the balance was.</description>
     </item>
     
     <item>
-      <title>Filters</title>
-      <link>https://example.org/checkout/usage/filters/</link>
+      <title>3. Payment</title>
+      <link>https://plue.io/checkout/integration-guide/payment/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/filters/</guid>
+      <guid>https://plue.io/checkout/integration-guide/payment/</guid>
+      <description>The transaction is posted to Plue from your client-side code (the post can also be made from server-side code if preferred). Plue will trigger a webhook to your server that includes the transaction details to process the rest of your order. It is important that your server-side code cross-references the order_id in the metadata and the transaction status before releasing the order.
+Endpoints    URL methods     https://api.</description>
+    </item>
+    
+    <item>
+      <title>Filters</title>
+      <link>https://plue.io/checkout/usage/filters/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://plue.io/checkout/usage/filters/</guid>
       <description>The API provides a way to filter and/or sort on listing pages. All filtering and sorting is done via query parameters in the GET request.
 To filter by a field, include it in the URL as a standard query parameter with a ? delimiting the URL and the start of the query parameters and a &amp;amp; between each filtered field. This can be seen below:
 curl https://api.rehive.com/3/admin/transactions/?status=complete&amp;amp;tx_type=debit&amp;amp;orderby=created -X GET -H &amp;quot;Authorization: Token {token}&amp;quot; -H &amp;quot;Content-Type: application/json&amp;quot;  To sort results, an endpoint will often also include an optional orderby query parameter.</description>
@@ -118,10 +148,10 @@ curl https://api.rehive.com/3/admin/transactions/?status=complete&amp;amp;tx_typ
     
     <item>
       <title>Idempotency</title>
-      <link>https://example.org/checkout/usage/idempotency/</link>
+      <link>https://plue.io/checkout/usage/idempotency/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/idempotency/</guid>
+      <guid>https://plue.io/checkout/usage/idempotency/</guid>
       <description>The API supports idempotent requests for ensuring the same operations never occur twice.
 To perform an idempotent request, attach a unique key to any POST, PUT or PATCH request made to the API: via the Idempotency-Key: {key} header:
 curl {url} -X GET -H &amp;quot;Idempotency-Key: {key}&amp;quot; -H &amp;quot;Authorization: Token {token}&amp;quot; -H &amp;quot;Content-Type: application/json&amp;quot;  API requests made with a new key will get saved along with their HTTP response. Follow up requests made with the same key will always return the same response (As long as the request has the same HTTP method and URL path).</description>
@@ -129,10 +159,10 @@ curl {url} -X GET -H &amp;quot;Idempotency-Key: {key}&amp;quot; -H &amp;quot;Aut
     
     <item>
       <title>Events</title>
-      <link>https://example.org/checkout/usage/events/</link>
+      <link>https://plue.io/checkout/usage/events/</link>
       <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
       
-      <guid>https://example.org/checkout/usage/events/</guid>
+      <guid>https://plue.io/checkout/usage/events/</guid>
       <description>The platform has a collection of internal events that can be configured to trigger webhooks.
 Webhooks should always be created with a secure secret key. The secret key can be used to identify valid requests to your server. The secret is sent in the Authorization header of the webhook request.
 The platform expects a 200 OK HTTP response when webhooks are called. If a 200 response is not returned, the platform will retry the webhook up to 12 times with a gradually increasing delay between each retry.</description>

@@ -3,97 +3,117 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.org/checkout/usage/authorization/</loc>
+    <loc>https://plue.io/checkout/usage/authorization/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/get-started/</loc>
+    <loc>https://plue.io/checkout/get-started/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/get-started/introduction/</loc>
+    <loc>https://plue.io/checkout/integration-guide/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/</loc>
+    <loc>https://plue.io/checkout/get-started/introduction/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/core-resources/users/</loc>
+    <loc>https://plue.io/checkout/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/core-resources/accounts/</loc>
+    <loc>https://plue.io/checkout/integration-guide/overview/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/core-resources/</loc>
+    <loc>https://plue.io/checkout/core-resources/users/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/errors/</loc>
+    <loc>https://plue.io/checkout/integration-guide/authentication/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/get-started/quick-guide/</loc>
+    <loc>https://plue.io/checkout/core-resources/accounts/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/get-started/checkout-flow/</loc>
+    <loc>https://plue.io/checkout/usage/errors/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/pagination/</loc>
+    <loc>https://plue.io/checkout/get-started/quick-guide/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/core-resources/transactions/</loc>
+    <loc>https://plue.io/checkout/integration-guide/balance/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/filters/</loc>
+    <loc>https://plue.io/checkout/core-resources/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/</loc>
+    <loc>https://plue.io/checkout/usage/pagination/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/idempotency/</loc>
+    <loc>https://plue.io/checkout/core-resources/transactions/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/checkout/usage/events/</loc>
+    <loc>https://plue.io/checkout/integration-guide/payment/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/</loc>
+    <loc>https://plue.io/checkout/usage/filters/</loc>
     <lastmod>2018-09-17T15:21:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://plue.io/checkout/usage/</loc>
+    <lastmod>2018-09-17T15:21:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://plue.io/checkout/usage/idempotency/</loc>
+    <lastmod>2018-09-17T15:21:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://plue.io/checkout/usage/events/</loc>
+    <lastmod>2018-09-17T15:21:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://plue.io/</loc>
+    <lastmod>2018-09-17T15:21:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://plue.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://plue.io/tags/</loc>
     <priority>0</priority>
   </url>
   
