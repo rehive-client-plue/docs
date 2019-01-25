@@ -31,7 +31,7 @@ curl https://api.rehive.com/3/auth/login/
 
 Once you have your own user you can replace the placeholder data in the example JSON object and then fire off the above request. If successful, you should get a response like this:
 
-```
+```json
 {
     "status": "success"
     "data": {
@@ -99,7 +99,7 @@ curl https://api.rehive.com/3/user/accounts/
 If you used the `token` you previously retrieved you should get a successful response containing a list of user accounts:
 
 
-```
+```json
 [
     {
         "name": "default",

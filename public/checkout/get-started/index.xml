@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get started on Documentation</title>
+    <link>https://example.org/checkout/get-started/</link>
+    <description>Recent content in Get started on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Sep 2018 15:21:22 +0200</lastBuildDate>
+    
+	<atom:link href="https://example.org/checkout/get-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://example.org/checkout/get-started/introduction/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://example.org/checkout/get-started/introduction/</guid>
+      <description>The Merchant API allows you to integrate the Plue wallet into your existing checkout flow.
+The API The API is organized around RESTful principles. There are 2 primary sections to the merchant API:
+Auth The auth section of the platform provides endpoints for handling authentication and other authorization related functions that are common to all users within the platform.
+Authentication endpoints do not require any specific permissions nor are they limited by any other access control.</description>
+    </item>
+    
+    <item>
+      <title>Quick guide</title>
+      <link>https://example.org/checkout/get-started/quick-guide/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://example.org/checkout/get-started/quick-guide/</guid>
+      <description>To get started with the API you have a couple options:
+ You can choose to use one of the Rehive supported SDKs or Integrate the API manually in your choice of language.  To use one of the SDKs check for you language in the &amp;ldquo;references list&amp;rdquo; in the sidebar. If you instead want to use a language that does not have a Rehive supported SDK, a custom implementation should be trivial as the platform uses standard HTTP which is widely supported.</description>
+    </item>
+    
+    <item>
+      <title>Checkout flow</title>
+      <link>https://example.org/checkout/get-started/checkout-flow/</link>
+      <pubDate>Mon, 17 Sep 2018 15:21:22 +0200</pubDate>
+      
+      <guid>https://example.org/checkout/get-started/checkout-flow/</guid>
+      <description>TODO</description>
+    </item>
+    
+  </channel>
+</rss>

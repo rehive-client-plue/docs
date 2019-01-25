@@ -1,4 +1,4 @@
-baseURL: "https://example.org/"
+baseURL: "https://plue.io"
 languageCode: "en-us"
 title: "Documentation"
 theme: "hexon-hugo-theme"
