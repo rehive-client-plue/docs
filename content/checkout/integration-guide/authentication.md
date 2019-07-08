@@ -10,13 +10,13 @@ The customer arrives on your web page in the browser and selects the _Pay with P
 ### Endpoints
 URL | methods
 ---|---
-`https://api.rehive.com/3/auth/login/` | `POST`
+`https://api.plue.io/3/auth/login/` | `POST`
 
 ### Javascript example code:
 ```
-rehive.auth.login({
-    user: "joe@rehive.com",
-    company: "plue",
+plue.auth.login({
+    user: "joe@example.com",
+    company: "plue_prod",
     password: "joe1234"
 }).then(function(user){
     ...
@@ -25,7 +25,7 @@ rehive.auth.login({
 })
 ```
 
-<aside class="notice">Note: the <b>company</b> field should be hardcoded to the value <i>"plue"</i>, while the <b>user</b> and <b>password</b> fields are inputs from the login form</aside>
+<aside class="notice">Note: the <b>company</b> field should be hardcoded to the value <i>"plue_prod"</i>, while the <b>user</b> and <b>password</b> fields are inputs from the login form</aside>
 
  The API will return a success response with the user details and the javascript SDK will handle the storing of the authentication token for use on subsequent requests.
 

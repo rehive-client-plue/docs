@@ -6,7 +6,5 @@ weight: 1
 linkTo: /checkout/get-started/introduction
 references:
   - title: Javascript SDK
-    url: https://github.com/rehive/rehive-javascript
-  - title: Python SDK
-    url: https://github.com/rehive/rehive-python
+    url: https://www.npmjs.com/package/@pluewallet/plue
 ---

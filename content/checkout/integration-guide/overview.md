@@ -23,10 +23,8 @@ Create a simple user interface for your customer to select Plue as a payment met
 **2. Balance Check / Currency Selection:**  
 2.1 The customer's account balance is pulled.  
 2.2 You can decide if you want to allow the customer to change their preferred account or currency to make a payment.  
-2.3 The customer can see their available balance for the selected accounts as well as the currency conversion rate that matches the currency specified in the order.  
-2.4 The customer can change the amount they would need to pay in the currency specified in the order and validate the underlying currency amount that will be charged to their account.  
-2.5 The customer can see the fee amount that will be charged to their Plue account before completing the purchase.
-2.6 The customer clicks Confirm to proceed.  
+2.3 The customer can see their available balance for the selected accounts 
+2.4 The customer clicks Confirm to proceed.  
 
 **3. Direct payment and callback processing**  
 3.1 The transaction is posted to Plue from your client-side code (the post can also be made from server-side code if preferred).  

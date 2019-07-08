@@ -9,11 +9,11 @@ The customer's account balance is pulled. You can decide if you want to allow th
 ### Endpoints
 URL | methods
 ---|---
-`https://api.rehive.com/3/accounts/` | `GET`
+`https://api.plue.io/3/accounts/` | `GET`
 
 ### Javascript example code:
 ```
-rehive.accounts.get({filters: filters}).then(function(res){
+plue.accounts.get({filters: filters}).then(function(res){
     ...
 },function(err){
     ...

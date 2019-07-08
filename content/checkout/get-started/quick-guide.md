@@ -7,26 +7,26 @@ weight: 2
 
 To get started with the API you have a couple options:
 
-1. You can choose to use one of the Rehive supported SDKs or
+1. You can choose to use the Plue supported JS SDK
 2. Integrate the API manually in your choice of language.
 
-To use one of the SDKs check for you language in the "references list" in the sidebar. If you instead want to use a language that does not have a Rehive supported SDK, a custom implementation should be trivial as the platform uses standard HTTP which is widely supported.
+To use the the SDK check for you language in the "references list" in the sidebar. If you instead want to use a language that does not have a Plue supported SDK, a custom implementation should be trivial as the platform uses standard HTTP which is widely supported.
 
 ### Using the API
 
 The easiest way to get started with the API is to use cURL to make a login request:
 
 ```
-curl https://api.rehive.com/3/auth/login/
+curl https://api.plue.io/3/auth/login/
   -X POST
   -H "Content-Type: application/json"
-  -d '{"user": "joe@rehive.com",
-       "company": "plue"
+  -d '{"user": "joe@example.com",
+       "company": "plue_prod"
        "password": "joe1234"}'
 ```
 
 <aside class="warning">
-    Before trying the above request, make you have added a test user by signing one up on the <a href="https://wallet.plue.io" target="_blank">plue wallet</a>. The <code>company</code> field should always be set to <code>plue</code>. For the <code>user</code> and <code>password</code> fields, use the details of the test user you created in the Plue wallet.
+    Before trying the above request, make you have added a test user by signing one up on the <a href="https://wallet.plue.io" target="_blank">plue wallet</a>. The <code>company</code> field should always be set to <code>plue_prod</code>. For the <code>user</code> and <code>password</code> fields, use the details of the test user you created in the Plue wallet.
 </aside>
 
 Once you have your own user you can replace the placeholder data in the example JSON object and then fire off the above request. If successful, you should get a response like this:
@@ -40,13 +40,13 @@ Once you have your own user you can replace the placeholder data in the example 
             "id": "00000000-0000-0000-0000-000000000000",
             "first_name": "Joe",
             "last_name": "Soap",
-            "email": "joe@rehive.com",
+            "email": "joe@example.com",
             "username": "",
             "id_number": null,
             "birth_date": null,
             "profile": null,
             "currency": null,
-            "company": "plue",
+            "company": "plue_prod",
             "language": "en",
             "nationality": "CA",
             "metadata": {},
@@ -90,7 +90,7 @@ And there you have it, a successful login. The user was validated and authentica
 For example, you may want to get a list of accounts associated to the user:
 
 ```
-curl https://api.rehive.com/3/user/accounts/
+curl https://api.plue.io/3/user/accounts/
   -X GET
   -H "Authorization: Token {token}"
   -H "Content-Type: application/json"

@@ -10,7 +10,7 @@ The API provides a way to filter and/or sort on listing pages. All filtering and
 To filter by a field, include it in the URL as a standard query parameter with a `?` delimiting the URL and the start of the query parameters and a `&` between each filtered field. This can be seen below:
 
 ```shell
-curl https://api.rehive.com/3/admin/transactions/?status=complete&tx_type=debit&orderby=created
+curl https://api.plue.io/3/admin/transactions/?status=complete&tx_type=debit&orderby=created
   -X GET
   -H "Authorization: Token {token}"
   -H "Content-Type: application/json"

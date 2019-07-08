@@ -14,7 +14,7 @@ This object is returned together with the authentication token when the user log
     "id": "00000000-0000-0000-0000-000000000000",
     "first_name": "Joe",
     "last_name": "Soap",
-    "email": "joe@rehive.com",
+    "email": "joe@example.com",
     "username": null,
     "id_number": "",
     "birth_date": "2000-01-01",
@@ -26,7 +26,7 @@ This object is returned together with the authentication token when the user log
         "unit": "rand",
         "divisibility": 2
     },
-    "company": "rehive",
+    "company": "plue_prod",
     "language": "en",
     "nationality": "ZA",
     "metadata": null,
@@ -60,8 +60,11 @@ This object is returned together with the authentication token when the user log
 
 section | type| URL | methods
 ---|---|---|---
-auth | single | `https://api.rehive.com/3/auth/register/` | `POST`
-auth | single | `https://api.rehive.com/3/auth/login/` | `POST`
+auth | single | `https://api.plue.io/3/user/` | `GET`, `PUT`,`PATCH`
+auth | single | `https://api.plue.io/3/auth/register/` | `POST`
+auth | single | `https://api.plue.io/3/auth/login/` | `POST`
+auth | single | `https://api.plue.io/3/auth/logout/` | `POST`
+
 
 ### Usage
 

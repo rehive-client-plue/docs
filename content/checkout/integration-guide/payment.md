@@ -10,11 +10,11 @@ The transaction is posted to Plue from your client-side code (the post can also 
 ### Endpoints
 URL | methods
 ---|---
-`https://api.rehive.com/3/transactions/transfer/` | `POST`
+`https://api.plue.io/3/transactions/transfer/` | `POST`
 
 ### Javascript example code:
 ```
-rehive.transactions.createTransfer(
+plue.transactions.createTransfer(
 {
     amount: 500,
     recipient: "merchant@email-provider.com"
@@ -40,7 +40,7 @@ Example response:
     "balance": 0,
     "account": "0000000000",
     "label": "Debit",
-    "company": "rehive",
+    "company": "Plue_prod",
     "currency": {
         "description": "Rand",
         "code": "ZAR",
@@ -88,7 +88,7 @@ This will be posted to the server url you configure whenever a payment is made.
 	    "balance": 0,
 	    "account": "0000000000",
 	    "label": "Debit",
-	    "company": "rehive",
+	    "company": "plue_prod",
 	    "currency": {
 	        "description": "Rand",
 	        "code": "ZAR",

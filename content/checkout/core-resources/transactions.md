@@ -39,7 +39,7 @@ A full transaction object looks like:
         "balance": 0,
         "account": "0000000000",
         "label": "Credit",
-        "company": "rehive",
+        "company": "plue_prod",
         "currency": {
             "description": "Rand",
             "code": "ZAR",
@@ -68,10 +68,12 @@ On the other hand a transfer will have some additional information in the `sourc
 
 section | type| URL | methods
 ---|---|---|---
-user | multiple |  `https://api.rehive.com/3/transactions/` | `GET`, `POST`
-user | single |  `https://api.rehive.com/3/transactions/<id>/` | `GET`
-user | single |  `https://api.rehive.com/3/transactions/transfer/` | `POST`
+user | multiple |  `https://api.plue.io/3/transactions/` | `GET`, `POST`
+user | single |  `https://api.plue.io/3/transactions/<id>/` | `GET`, `PUT`,`PATCH`
+user | single |  `https://api.plue.io/3/transactions/transfer/` | `POST`
+user | single |  `https://api.plue.io/3/transactions/debit/` | `POST`
+user | single |  `https://api.plue.io/3/transactions/credit/` | `POST`
 
 ### Usage
 
-Usage remains the same for all endpoints in Rehive. Simply invoke one of the allowed HTTP methods with the correct `Content-Type` and a `Authorization` header.
+Usage remains the same for all endpoints in Plue. Simply invoke one of the allowed HTTP methods with the correct `Content-Type` and a `Authorization` header.

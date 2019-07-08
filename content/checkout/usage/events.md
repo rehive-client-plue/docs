@@ -17,7 +17,7 @@ Every webhook includes a body containing a JSON object.
 {
     "id": 1,
     "event": "event.name",
-    "company": "company_id",
+    "company": "plue_prod",
     "data": {
 
     }

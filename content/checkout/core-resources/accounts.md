@@ -20,7 +20,7 @@ The full account object with a single currency looks like:
     "user": {
         "id": "00000000-0000-0000-0000-000000000000",
         "username": null,
-        "email": "joe@rehive.com",
+        "email": "joe@example.com",
         "mobile": "+27840000000",
         "first_name": "Joe",
         "last_name": "Soap",
@@ -62,10 +62,10 @@ To view an account or its currencies you can use the following endpoints. Keep i
 
 section | type| URL | methods
 ---|---|---|---
-user | multiple | `https://api.rehive.com/3/accounts/` | `GET`
-user | single | `https://api.rehive.com/3/accounts/<reference>/` | `GET`
-user | multiple | `https://api.rehive.com/3/accounts/<reference>/currencies/` | `GET`
-user | single | `https://api.rehive.com/3/accounts/<reference>/currencies/</code>/` | `GET`
+user | multiple | `https://api.plue.io/3/accounts/` | `GET`, `POST`
+user | single | `https://api.plue.io/3/accounts/<reference>/` |  `GET`, `PUT`,`PATCH`
+user | multiple | `https://api.plue.io/3/accounts/<reference>/currencies/` |  `GET`, `POST`
+user | single | `https://api.plue.io/3/accounts/<reference>/currencies/<code>/` | `GET`, `PUT`,`PATCH`
 
 ### Usage
 
