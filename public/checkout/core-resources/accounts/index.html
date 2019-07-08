@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+<title>Accounts | Documentation</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.455f10f5770b17f11297786d6894e4edc0806cb0612d695ff60dc4186379d86e.css" integrity="sha256-RV8Q9XcLF/ESl3htaJTk7cCAbLBhLWlf9g3EGGN52G4=">
+
+<link rel="icon" type="/images/favicon.png" href="/images/favicon.png">
+
+	</head>
+	<body>
+		<header>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				
+				<li class="navbar-item">
+					
+						<a href="http://plue.io" class="navbar-logo-link">
+							<img src="/images/logo.png">
+						</a>
+					
+				</li>
+				<li class="navbar-item">
+					<a href="/" class="navbar-link ">Docs</a>
+				</li>
+				
+					<li class="navbar-item">
+						<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+					</li>
+				
+	
+				
+					<li class="navbar-item navbar-right-item">
+						<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+					</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-navbar">
+		<div class="burger-container" onclick="openNav()">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	</div>
+	<div id="sidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<a href="/" class="navbar-link ">Docs</a>
+		
+			<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+		
+
+		
+			<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+		
+	  </div>
+	  <script>
+			function openNav() {
+				document.getElementById("sidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("sidenav").style.width = "0";
+			}
+	  </script>
+</header>
+
+		<div class="container">
+			<div class="row">
+				<aside class="navaside two columns">
+	<ul>
+		
+		
+			<li>
+				<span><strong>Get started</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/get-started/introduction/" class="">Introduction</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/quick-guide/" class="">Quick guide</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Integration guide</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/integration-guide/overview/" class="">Overview</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/authentication/" class="">1. Authentication</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/balance/" class="">2. Balance check</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/payment/" class="">3. Payment</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Core resources</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/core-resources/users/" class="">Users</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/accounts/" class="active">Accounts</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/transactions/" class="">Transactions</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Usage</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/usage/authorization/" class="">Authorization</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/errors/" class="">Errors</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/pagination/" class="">Pagination</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/filters/" class="">Filters</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/idempotency/" class="">Idempotency</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/events/" class="">Events</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				<li>
+					<span><strong>References</strong></span>
+					<ul>
+						
+							<li>
+								<a href="https://www.npmjs.com/package/@pluewallet/plue" target="_blank">Javascript SDK</a>
+							</li>
+						
+					</ul>
+				</li>
+			
+		
+	</ul>
+</aside>
+
+				<main class="ten columns">
+					<div class="content">
+						
+	<h1>Accounts</h1>
+
+	<article>
+	    
+
+<h3 id="object">Object</h3>
+
+<p>This object can be used to check the currency balances for a user before approving a transaction.</p>
+
+<p>The full account object with a single currency looks like:</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;default&quot;,
+    &quot;label&quot;: &quot;Default&quot;,
+    &quot;reference&quot;: &quot;0000000000&quot;,
+    &quot;primary&quot;: true,
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;username&quot;: null,
+        &quot;email&quot;: &quot;joe@example.com&quot;,
+        &quot;mobile&quot;: &quot;+27840000000&quot;,
+        &quot;first_name&quot;: &quot;Joe&quot;,
+        &quot;last_name&quot;: &quot;Soap&quot;,
+        &quot;profile&quot;: null
+    },
+    &quot;currencies&quot;: [
+        {
+            &quot;balance&quot;: 0,
+            &quot;available_balance&quot;: 0,
+            &quot;currency&quot;: {
+                &quot;code&quot;: &quot;USD&quot;,
+                &quot;description&quot;: &quot;United States dollar&quot;,
+                &quot;symbol&quot;: &quot;$&quot;,
+                &quot;unit&quot;: &quot;dollar&quot;,
+                &quot;divisibility&quot;: 2
+            },
+            &quot;limits&quot;: [],
+            &quot;fees&quot;: [],
+            &quot;active&quot;: true,
+            &quot;settings&quot;: {
+                &quot;allow_transactions&quot;: true,
+                &quot;allow_debit_transactions&quot;: true,
+                &quot;allow_credit_transactions&quot;: true
+            },
+            &quot;archived&quot;: false,
+            &quot;created&quot;: 1538573021547,
+            &quot;updated&quot;: 1538573021547
+        }
+    ],
+    &quot;archived&quot;: false,
+    &quot;created&quot;: 1538573021502,
+    &quot;updated&quot;: 1538573021502
+}
+</code></pre>
+
+<h3 id="endpoints">Endpoints</h3>
+
+<p>To view an account or its currencies you can use the following endpoints. Keep in mind, accounts are always identified by their <code>reference</code>.</p>
+
+<table>
+<thead>
+<tr>
+<th>section</th>
+<th>type</th>
+<th>URL</th>
+<th>methods</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>user</td>
+<td>multiple</td>
+<td><code>https://api.plue.io/3/accounts/</code></td>
+<td><code>GET</code>, <code>POST</code></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>single</td>
+<td><code>https://api.plue.io/3/accounts/&lt;reference&gt;/</code></td>
+<td><code>GET</code>, <code>PUT</code>,<code>PATCH</code></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>multiple</td>
+<td><code>https://api.plue.io/3/accounts/&lt;reference&gt;/currencies/</code></td>
+<td><code>GET</code>, <code>POST</code></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>single</td>
+<td><code>https://api.plue.io/3/accounts/&lt;reference&gt;/currencies/&lt;code&gt;/</code></td>
+<td><code>GET</code>, <code>PUT</code>,<code>PATCH</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="usage">Usage</h3>
+
+<p>Usage remains the same for all endpoints. Simply invoke one of the allowed HTTP methods with the correct <code>Content-Type</code> and a <code>Authorization</code> header.</p>
+
+	</article>
+
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+	<div class="container">
+		<div class="row links">
+			<a href="/">Docs</a>
+			
+			
+				<a href="/checkout/get-started/introduction">Merchant checkout</a>
+			
+			
+				<a href="https://wallet.plue.io">Log in</a>
+			
+		</div>
+	</div>
+</footer>
+	</body>
+</html>

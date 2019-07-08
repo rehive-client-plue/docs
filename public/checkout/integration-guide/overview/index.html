@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+<title>Overview | Documentation</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.455f10f5770b17f11297786d6894e4edc0806cb0612d695ff60dc4186379d86e.css" integrity="sha256-RV8Q9XcLF/ESl3htaJTk7cCAbLBhLWlf9g3EGGN52G4=">
+
+<link rel="icon" type="/images/favicon.png" href="/images/favicon.png">
+
+	</head>
+	<body>
+		<header>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				
+				<li class="navbar-item">
+					
+						<a href="http://plue.io" class="navbar-logo-link">
+							<img src="/images/logo.png">
+						</a>
+					
+				</li>
+				<li class="navbar-item">
+					<a href="/" class="navbar-link ">Docs</a>
+				</li>
+				
+					<li class="navbar-item">
+						<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+					</li>
+				
+	
+				
+					<li class="navbar-item navbar-right-item">
+						<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+					</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-navbar">
+		<div class="burger-container" onclick="openNav()">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	</div>
+	<div id="sidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<a href="/" class="navbar-link ">Docs</a>
+		
+			<a href="/checkout/get-started/introduction" class="navbar-link active">Merchant checkout</a>
+		
+
+		
+			<a href="https://wallet.plue.io" class="navbar-link">Log in</a>
+		
+	  </div>
+	  <script>
+			function openNav() {
+				document.getElementById("sidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("sidenav").style.width = "0";
+			}
+	  </script>
+</header>
+
+		<div class="container">
+			<div class="row">
+				<aside class="navaside two columns">
+	<ul>
+		
+		
+			<li>
+				<span><strong>Get started</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/get-started/introduction/" class="">Introduction</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/get-started/quick-guide/" class="">Quick guide</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Integration guide</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/integration-guide/overview/" class="active">Overview</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/authentication/" class="">1. Authentication</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/balance/" class="">2. Balance check</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/integration-guide/payment/" class="">3. Payment</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Core resources</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/core-resources/users/" class="">Users</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/accounts/" class="">Accounts</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/core-resources/transactions/" class="">Transactions</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li>
+				<span><strong>Usage</strong></span>
+				<ul>
+					
+						<li>
+							<a href="/checkout/usage/authorization/" class="">Authorization</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/errors/" class="">Errors</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/pagination/" class="">Pagination</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/filters/" class="">Filters</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/idempotency/" class="">Idempotency</a>
+						</li>
+					
+						<li>
+							<a href="/checkout/usage/events/" class="">Events</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				<li>
+					<span><strong>References</strong></span>
+					<ul>
+						
+							<li>
+								<a href="https://www.npmjs.com/package/@pluewallet/plue" target="_blank">Javascript SDK</a>
+							</li>
+						
+					</ul>
+				</li>
+			
+		
+	</ul>
+</aside>
+
+				<main class="ten columns">
+					<div class="content">
+						
+	<h1>Overview</h1>
+
+	<article>
+	    <p>Accepting payments with Plue Checkout is a three step process, with client side and server side actions.</p>
+
+<p>From your website running in the customer’s browser, Plue securely collects your customer’s authentication details and returns an authentication token. This, along with any other form data, is then submitted by the browser to the Plue server.
+Your application can pull the customer’s account balance and let the customer choose a Plue account to make a payment. The customer can confirm the payment details to proceed.
+Your server will receive a webhook that includes the transaction details to validate and fulfil the order.</p>
+
+<p>Using the Plue server directly ensures that no sensitive authentication data is ever stored on your server.</p>
+
+<p>Create a simple user interface for your customer to select Plue as a payment method on your web page. The steps below describe a suggested checkout flow:</p>
+
+<p><strong>1. Authentication:</strong><br />
+1.1 The customer arrives on your web page in the browser and selects the Pay with Plue checkout option.<br />
+1.2 The customer is prompted to authenticate their Plue account by providing their email and password.</p>
+
+<p><strong>2. Balance Check / Currency Selection:</strong><br />
+2.1 The customer&rsquo;s account balance is pulled.<br />
+2.2 You can decide if you want to allow the customer to change their preferred account or currency to make a payment.<br />
+2.3 The customer can see their available balance for the selected accounts
+2.4 The customer clicks Confirm to proceed.</p>
+
+<p><strong>3. Direct payment and callback processing</strong><br />
+3.1 The transaction is posted to Plue from your client-side code (the post can also be made from server-side code if preferred).<br />
+3.2 Plue will trigger a webhook to your server that includes the transaction details to process the rest of your order.<br />
+3.3 It is important that your server-side code cross-references the order_id in the metadata and the transaction status before releasing the order.</p>
+
+	</article>
+
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<footer>
+	<div class="container">
+		<div class="row links">
+			<a href="/">Docs</a>
+			
+			
+				<a href="/checkout/get-started/introduction">Merchant checkout</a>
+			
+			
+				<a href="https://wallet.plue.io">Log in</a>
+			
+		</div>
+	</div>
+</footer>
+	</body>
+</html>
